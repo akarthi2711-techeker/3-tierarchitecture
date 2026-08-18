@@ -1,0 +1,470 @@
+/* ============================================================
+   EVENT PORTAL – styles.css
+   Professional college event registration UI
+   ============================================================ */
+
+/* --- Reset & Base ----------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary:       #1a73e8;   /* AWS-inspired blue  */
+  --primary-dark:  #1558b0;
+  --accent:        #34a853;   /* Green accent       */
+  --accent-dark:   #2d8a45;
+  --bg:            #f0f4f8;
+  --card-bg:       #ffffff;
+  --text:          #1f2937;
+  --text-muted:    #6b7280;
+  --border:        #d1d5db;
+  --error:         #dc2626;
+  --success:       #16a34a;
+  --radius:        10px;
+  --shadow:        0 4px 24px rgba(0, 0, 0, 0.10);
+  --font:          'Segoe UI', 'Inter', system-ui, sans-serif;
+}
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* --- Page Wrapper ----------------------------------------- */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- Header ----------------------------------------------- */
+.site-header {
+  background: #ffffff;
+  border-bottom: 3px solid var(--primary);
+  padding: 14px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.college-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.logo-fallback {
+  width: 64px;
+  height: 64px;
+  background: var(--primary);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.college-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.college-tagline {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* --- Hero Banner ------------------------------------------ */
+.hero-banner {
+  background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 60%, #1565c0 100%);
+  color: #fff;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.hero-content { max-width: 700px; margin: 0 auto; }
+
+.event-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #fff;
+  padding: 4px 18px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+}
+
+/* --- Main Content ----------------------------------------- */
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px 48px;
+}
+
+/* --- Form Card -------------------------------------------- */
+.form-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 36px 40px;
+  width: 100%;
+  max-width: 720px;
+}
+
+.form-header { margin-bottom: 28px; }
+
+.form-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.form-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* --- Alert ------------------------------------------------ */
+.alert {
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  border-left: 4px solid transparent;
+}
+
+.alert.hidden { display: none; }
+
+.alert-error {
+  background: #fef2f2;
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.alert-success {
+  background: #f0fdf4;
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.alert-info {
+  background: #eff6ff;
+  border-color: var(--primary);
+  color: var(--primary-dark);
+}
+
+/* --- Form Grid -------------------------------------------- */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Full-width groups */
+.form-group.full-width { grid-column: 1 / -1; }
+
+.form-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.required { color: var(--error); margin-left: 2px; }
+
+.form-control {
+  border: 1.5px solid var(--border);
+  border-radius: 7px;
+  padding: 10px 14px;
+  font-size: 0.93rem;
+  color: var(--text);
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  font-family: var(--font);
+  width: 100%;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(26,115,232,0.12);
+}
+
+.form-control.is-invalid {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px rgba(220,38,38,0.10);
+}
+
+.form-control.is-valid {
+  border-color: var(--accent);
+}
+
+.form-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236b7280' d='M1 1l5 5 5-5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; }
+
+.field-error {
+  font-size: 0.78rem;
+  color: var(--error);
+  min-height: 16px;
+}
+
+/* --- Form Footer / Submit Button -------------------------- */
+.form-footer {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-register {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 13px 48px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  text-decoration: none;
+  font-family: var(--font);
+}
+
+.btn-register:hover {
+  background: var(--accent-dark);
+  box-shadow: 0 4px 16px rgba(52,168,83,0.35);
+  text-decoration: none;
+}
+
+.btn-register:active { transform: translateY(1px); }
+
+.btn-register:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  padding: 11px 28px;
+  font-size: 0.93rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+  font-family: var(--font);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Button Loader Spinner */
+.btn-loader {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.btn-loader.hidden { display: none; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ============================================================
+   SUCCESS PAGE
+   ============================================================ */
+.success-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 44px 40px;
+  width: 100%;
+  max-width: 620px;
+  text-align: center;
+}
+
+.success-icon-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.success-icon {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: #fff;
+  border-radius: 50%;
+  font-size: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(52,168,83,0.35);
+}
+
+.success-title {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.success-subtitle {
+  color: var(--text-muted);
+  font-size: 0.97rem;
+  margin-bottom: 28px;
+}
+
+.reg-id-box {
+  background: linear-gradient(135deg, #1a73e8, #0d47a1);
+  color: #fff;
+  border-radius: 10px;
+  padding: 18px 32px;
+  margin-bottom: 28px;
+  display: inline-block;
+  min-width: 260px;
+}
+
+.reg-id-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+  margin-bottom: 6px;
+}
+
+.reg-id-value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.detail-table {
+  width: 100%;
+  margin-bottom: 28px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  border-bottom: 1px solid var(--border);
+}
+
+.detail-row:last-child { border-bottom: none; }
+
+.detail-key {
+  background: #f9fafb;
+  padding: 11px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-right: 1px solid var(--border);
+}
+
+.detail-value {
+  padding: 11px 16px;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.success-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.success-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* --- Footer ----------------------------------------------- */
+.site-footer {
+  background: #1f2937;
+  color: rgba(255,255,255,0.65);
+  text-align: center;
+  padding: 16px;
+  font-size: 0.82rem;
+  margin-top: auto;
+}
+
+/* --- Responsive ------------------------------------------- */
+@media (max-width: 640px) {
+  .form-card { padding: 24px 18px; }
+  .form-grid  { grid-template-columns: 1fr; }
+  .success-card { padding: 28px 18px; }
+  .hero-title { font-size: 1.5rem; }
+  .college-name { font-size: 0.95rem; }
+  .detail-row { grid-template-columns: 120px 1fr; }
+  .success-actions { flex-direction: column; }
+  .btn-register, .btn-secondary { width: 100%; justify-content: center; }
+}

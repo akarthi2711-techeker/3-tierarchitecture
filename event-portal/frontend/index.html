@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technical Event 2026 – Registration</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logo-area">
+          <img
+            src="assets/college-logo.png"
+            alt="College Logo"
+            class="college-logo"
+            onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';"
+          />
+          <div id="logo-fallback" class="logo-fallback" style="display:none;">
+            <span class="logo-icon">🎓</span>
+          </div>
+          <div class="college-info">
+            <h1 class="college-name">Sri Venkateswara College of Engineering</h1>
+            <p class="college-tagline">Autonomous Institution – Affiliated to Anna University</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+      <div class="hero-content">
+        <div class="event-badge">Technical Event 2026</div>
+        <h2 class="hero-title">Register for the Event</h2>
+        <p class="hero-subtitle">Fill in your details below to secure your spot</p>
+      </div>
+    </section>
+
+    <!-- Registration Form Card -->
+    <main class="main-content">
+      <div class="form-card">
+        <div class="form-header">
+          <h3 class="form-title">Student Registration</h3>
+          <p class="form-subtitle">All fields are mandatory</p>
+        </div>
+
+        <form id="registrationForm" novalidate>
+          <!-- Alert box -->
+          <div id="formAlert" class="alert hidden" role="alert" aria-live="polite"></div>
+
+          <div class="form-grid">
+            <!-- Student Name -->
+            <div class="form-group">
+              <label for="studentName" class="form-label">Student Name <span class="required">*</span></label>
+              <input
+                type="text"
+                id="studentName"
+                name="student_name"
+                class="form-control"
+                placeholder="Enter your full name"
+                maxlength="100"
+                autocomplete="name"
+                required
+              />
+              <span class="field-error" id="nameError"></span>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email" class="form-label">Email ID <span class="required">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-control"
+                placeholder="Enter your email address"
+                maxlength="150"
+                autocomplete="email"
+                required
+              />
+              <span class="field-error" id="emailError"></span>
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group">
+              <label for="phone" class="form-label">Phone Number <span class="required">*</span></label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="form-control"
+                placeholder="Enter 10-digit phone number"
+                maxlength="10"
+                pattern="[6-9][0-9]{9}"
+                autocomplete="tel"
+                required
+              />
+              <span class="field-error" id="phoneError"></span>
+            </div>
+
+            <!-- Department -->
+            <div class="form-group">
+              <label for="department" class="form-label">Department <span class="required">*</span></label>
+              <select id="department" name="department" class="form-control form-select" required>
+                <option value="" disabled selected>Select Department</option>
+                <option value="B.E. Computer Science and Engineering">B.E. Computer Science and Engineering</option>
+                <option value="B.E. Electronics and Communication Engineering">B.E. Electronics and Communication Engineering</option>
+                <option value="B.E. Electrical and Electronics Engineering">B.E. Electrical and Electronics Engineering</option>
+                <option value="B.E. Mechanical Engineering">B.E. Mechanical Engineering</option>
+                <option value="B.Tech Information Technology">B.Tech Information Technology</option>
+                <option value="B.Tech Artificial Intelligence and Data Science">B.Tech Artificial Intelligence and Data Science</option>
+                <option value="B.Tech Artificial Intelligence and Machine Learning">B.Tech Artificial Intelligence and Machine Learning</option>
+                <option value="Other">Other</option>
+              </select>
+              <span class="field-error" id="deptError"></span>
+            </div>
+
+            <!-- College -->
+            <div class="form-group">
+              <label for="college" class="form-label">College <span class="required">*</span></label>
+              <input
+                type="text"
+                id="college"
+                name="college"
+                class="form-control"
+                placeholder="Enter your college name"
+                maxlength="200"
+                required
+              />
+              <span class="field-error" id="collegeError"></span>
+            </div>
+
+            <!-- Event -->
+            <div class="form-group">
+              <label for="event" class="form-label">Event <span class="required">*</span></label>
+              <select id="event" name="event" class="form-control form-select" required>
+                <option value="" disabled selected>Select Event</option>
+                <option value="Hackathon">Hackathon</option>
+                <option value="Workshop">Workshop</option>
+                <option value="Paper Presentation">Paper Presentation</option>
+                <option value="Project Presentation">Project Presentation</option>
+              </select>
+              <span class="field-error" id="eventError"></span>
+            </div>
+
+            <!-- Year -->
+            <div class="form-group">
+              <label for="year" class="form-label">Year <span class="required">*</span></label>
+              <select id="year" name="year" class="form-control form-select" required>
+                <option value="" disabled selected>Select Year</option>
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year">3rd Year</option>
+                <option value="4th Year">4th Year</option>
+              </select>
+              <span class="field-error" id="yearError"></span>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div class="form-footer">
+            <button type="submit" id="submitBtn" class="btn-register">
+              <span id="btnText">REGISTER</span>
+              <span id="btnLoader" class="btn-loader hidden" aria-hidden="true"></span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 Technical Event. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

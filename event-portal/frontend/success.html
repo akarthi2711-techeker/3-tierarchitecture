@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration Successful – Technical Event 2026</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logo-area">
+          <img
+            src="assets/college-logo.png"
+            alt="College Logo"
+            class="college-logo"
+            onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';"
+          />
+          <div id="logo-fallback" class="logo-fallback" style="display:none;">
+            <span class="logo-icon">🎓</span>
+          </div>
+          <div class="college-info">
+            <h1 class="college-name">Sri Venkateswara College of Engineering</h1>
+            <p class="college-tagline">Autonomous Institution – Affiliated to Anna University</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="success-card">
+        <!-- Success Icon -->
+        <div class="success-icon-wrap">
+          <div class="success-icon" aria-hidden="true">&#10003;</div>
+        </div>
+
+        <h2 class="success-title">Registration Successful!</h2>
+        <p class="success-subtitle">Thank you for registering. Your seat has been confirmed.</p>
+
+        <!-- Registration ID Highlight -->
+        <div class="reg-id-box">
+          <p class="reg-id-label">Registration ID</p>
+          <p class="reg-id-value" id="displayRegId">—</p>
+        </div>
+
+        <!-- Student Details -->
+        <div class="detail-table">
+          <div class="detail-row">
+            <span class="detail-key">Student Name</span>
+            <span class="detail-value" id="displayName">—</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-key">Email</span>
+            <span class="detail-value" id="displayEmail">—</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-key">Department</span>
+            <span class="detail-value" id="displayDept">—</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-key">College</span>
+            <span class="detail-value" id="displayCollege">—</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-key">Event</span>
+            <span class="detail-value" id="displayEvent">—</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-key">Year</span>
+            <span class="detail-value" id="displayYear">—</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="success-actions">
+          <a href="index.html" class="btn-secondary">Register Another Student</a>
+          <a href="index.html" class="btn-register">Go to Event Home</a>
+        </div>
+
+        <p class="success-note">
+          Please save your Registration ID for future reference. You will need it on the day of the event.
+        </p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 Technical Event. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Read registration data passed via sessionStorage from script.js
+    (function () {
+      const data = JSON.parse(sessionStorage.getItem("registrationSuccess") || "{}");
+
+      function setText(id, val) {
+        const el = document.getElementById(id);
+        if (el) el.textContent = val || "—";
+      }
+
+      setText("displayRegId",  data.registration_id);
+      setText("displayName",   data.student_name);
+      setText("displayEmail",  data.email);
+      setText("displayDept",   data.department);
+      setText("displayCollege",data.college);
+      setText("displayEvent",  data.event);
+      setText("displayYear",   data.year);
+
+      // Clear so a refresh doesn't show stale data
+      sessionStorage.removeItem("registrationSuccess");
+    })();
+  </script>
+</body>
+</html>
