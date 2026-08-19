@@ -559,7 +559,7 @@ ORDER BY created_at DESC;
 | Field | Value |
 |-------|-------|
 | Developer | Karthikeyan M A |
-| AWS Account | 678191059143 |
+| AWS Account | YOUR_AWS_ACCOUNT_ID |
 | Region | ap-south-1 (Mumbai) |
 | Project | AWS 3-Tier Architecture Workshop |
 | Date | August 2026 |

@@ -7,7 +7,7 @@
 |-------|---------|
 | Project Title | AWS Event Platform — Technical Event Registration Portal |
 | Developer | Karthikeyan M A |
-| AWS Account ID | 678191059143 |
+| AWS Account ID | YOUR_AWS_ACCOUNT_ID |
 | Region | Asia Pacific — Mumbai (ap-south-1) |
 | Architecture | Three-Tier (Presentation / Application / Data) |
 | Deployment Date | August 19, 2026 |
