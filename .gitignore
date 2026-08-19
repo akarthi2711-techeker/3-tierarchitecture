@@ -4,6 +4,21 @@
 .env.*
 !.env.example
 
+# ── Documents / Screenshots (local reference only) ──────────
+docs/
+documents/
+screenshots/
+screen shots/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.webp
+# Allow SVG architecture diagram
+!architecture.svg
+
 # ── Python ──────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
@@ -29,14 +44,13 @@ MANIFEST
 pip-log.txt
 pip-delete-this-directory.txt
 
-# ── Virtual Environments ─────────────────────────────────────
+# ── Virtual Environments ────────────────────────────────────
 venv/
 env/
 ENV/
 .venv/
 .env/
 event-portal/backend/venv/
-student-result-portal/backend/venv/
 
 # ── IDEs ────────────────────────────────────────────────────
 .vscode/
@@ -50,9 +64,9 @@ Thumbs.db
 *.log
 logs/
 
-# ── Node (if any tooling is added later) ────────────────────
+# ── Node ────────────────────────────────────────────────────
 node_modules/
 
-# ── AWS credentials (should NEVER be committed) ─────────────
+# ── AWS credentials (NEVER commit) ──────────────────────────
 .aws/
 credentials
